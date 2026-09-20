@@ -19,6 +19,36 @@ body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.lluvia-gatosol {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gato-lluvia {
+    position: absolute;
+    top: -110px;
+    left: var(--posicion-x);
+    width: var(--tamano);
+    height: auto;
+    opacity: 0;
+    animation: caerGato var(--duracion) linear forwards;
+}
+
+.container {
+    position: relative;
+}
+
+.titulo-principal,
+.tarjeta-principal,
+.firma {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -131,6 +161,16 @@ body {
     text-align: center;
 }
 
+.firma {
+    margin: 18px auto 0;
+    color: #735928;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -148,6 +188,23 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes caerGato {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    10% {
+        opacity: 0.95;
+    }
+    90% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(var(--desplazamiento), 115vh, 0) rotate(360deg);
     }
 }
 
