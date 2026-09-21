@@ -1,5 +1,5 @@
 const contenedorLluvia = document.querySelector('.lluvia-gatosol')
-const rutaGatoSol = './Components/gatosol.png'
+const rutaGatoSol = new URL('./Components/gatosol.png', document.baseURI).href
 
 function crearGatoSol() {
   const gato = document.createElement('img')

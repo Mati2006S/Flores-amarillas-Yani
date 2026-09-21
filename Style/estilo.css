@@ -28,6 +28,7 @@ body {
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
+    display: block;
 }
 
 .gato-lluvia {
@@ -37,6 +38,9 @@ body {
     width: var(--tamano);
     height: auto;
     opacity: 0;
+    display: block;
+    z-index: 0;
+    will-change: transform, opacity;
     animation: caerGato var(--duracion) linear forwards;
 }
 
@@ -165,10 +169,11 @@ body {
     margin: 18px auto 0;
     color: #735928;
     font-family: 'Baloo 2', cursive;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
     font-weight: 700;
     text-align: center;
+    width: 100%;
 }
 
 @keyframes fadeIn {
@@ -222,6 +227,11 @@ body {
 
     .tarjeta-principal {
         border-radius: 18px;
+    }
+
+    .firma {
+        font-size: 1rem;
+        margin-top: 16px;
     }
 
     .botones {
